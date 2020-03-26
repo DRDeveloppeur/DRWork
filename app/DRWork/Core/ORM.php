@@ -8,17 +8,12 @@ class ORM extends Database
 {
   private $db;
 
-  public function __construct()
-  {
-    
-  }
-
   public function create($table, $fields)
   {
     $bdd = new Database;
     $this->db = $bdd->db();
 
-    $val1 = implode(", ", array_flip($fields));
+    $val1 = implode(", ", array_keys($fields));
     $val2 = "'" . implode("', '", $fields) . "'";
     $create = $this->db->prepare("INSERT INTO $table($val1) VALUES($val2)");
     $create->execute();
@@ -46,7 +41,7 @@ class ORM extends Database
       }
     }
     $fields_all = substr($fields_all, 0, -1);
-    $update = $this->db->prepare("UPDATE $table SET $fields_all WHERE $id");
+    $update = $this->db->prepare("UPDATE $table SET $fields_all WHERE id = $id");
     return $update->execute();
   }
 
@@ -75,15 +70,6 @@ class ORM extends Database
       }
     }
     $find = $this->db->prepare("SELECT * FROM $table $params_all");
-    $find->execute();
-    return $find->fetchAll();
-  }
-
-  public function findAlls($table){
-    $bdd = new Database;
-    $this->db = $bdd->db();
-
-    $find = $this->db->prepare("SELECT * FROM $table");
     $find->execute();
     return $find->fetchAll();
   }
