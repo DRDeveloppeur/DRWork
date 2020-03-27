@@ -1,5 +1,3 @@
-<<<<<<< HEAD
- 
 <?php
 
 return [
@@ -9,14 +7,3 @@ return [
         'password'  => 'your_password'
     ]
 ];
-=======
-<?php
-
-return [
-    'mysql' => [
-        'dsn'       => 'mysql:host=your_host;dbname=your_dbname',
-        'username'  => 'your_username',
-        'password'  => 'your_password'
-    ]
-];
->>>>>>> 9808e0f9559518c0347daa715eccb0aa7de1f53c
