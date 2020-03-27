@@ -1,0 +1,10 @@
+ 
+<?php
+
+return [
+    'mysql' => [
+        'dsn'       => 'mysql:host=your_host;dbname=your_dbname',
+        'username'  => 'your_username',
+        'password'  => 'your_password'
+    ]
+];
