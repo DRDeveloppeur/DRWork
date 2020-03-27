@@ -3,6 +3,7 @@
 namespace DRWork;
 
 use DRWork\Core\Database;
+use DRWork\Core\Database\DatabaseMysql;
 use DRWork\Router;
 
 
@@ -15,10 +16,10 @@ class Karnel
     {
         // charger le chemin des routes
         $this->router = new Router();
+    }
+    
+    public function run()
+    {
         $this->router->load();
-
-        // connection a la Database
-        $this->db = new Database();
-        $this->db->db();
     }
 }
