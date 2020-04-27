@@ -10,4 +10,9 @@ class ErrorController extends AbstractController
     {
         return $this->render('404.html.twig');
     }
+
+    public function methodNotFound()
+    {
+        return $this->render('405.html.twig');
+    }
 }

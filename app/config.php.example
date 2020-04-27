@@ -2,8 +2,8 @@
 
 return [
     'mysql' => [
-        'dsn'       => 'mysql:host=your_host;dbname=your_dbname',
-        'username'  => 'your_username',
+        'dsn'       => 'mysql:host=localhost;dbname=your_dbName',
+        'username'  => 'your_name',
         'password'  => 'your_password'
     ]
 ];

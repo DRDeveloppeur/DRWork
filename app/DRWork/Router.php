@@ -33,10 +33,12 @@ class Router
                 header("HTTP/1.0 404 Not Found");
                 $class = new ErrorController;
                 $class->notFound();
-                break;
+            break;
             case Dispatcher::METHOD_NOT_ALLOWED:
                 // ... 405 Method Not Allowed
-                $allowedMethods = $this->routeInfo[1];
+                header("HTTP/1.0 405 Method Not Allowed");
+                $class = new ErrorController;
+                $class->methodNotFound();
                 break;
             case Dispatcher::FOUND:
                 // ... 200 Call The Method
